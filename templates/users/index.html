@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー管理</title>
+</head>
+<body>
+    <h1>ユーザー一覧</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tbody>
+            <tr>
+            <th>ユーザーID</th>
+            <th>ユーザー名</th>
+            <th>年齢</th>
+            <th>編集</th>
+            </tr>
+            {{range .users}}
+            <tr>
+            <td>{{.UserID}}</td>
+            <td>{{.UserName}}</td>
+            <td>{{.Age}}</td>
+            <td><a href="/users/edit/{{.UserID}}">編集</a></td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    <a href="/users/create">ユーザー登録</a>
+</body>
+</html>
